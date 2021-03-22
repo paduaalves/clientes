@@ -1,20 +1,22 @@
 package io.github.paduaalves.clientes.model.entity;
 
 import lombok.Data;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
 @Data
-public class Cliente {
+public class Servico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(nullable = false, length = 150)
-    private String nome;
-    @Column(nullable = false, length = 11)
-    private String cpf;
-    @Column(name = "data_cadastro")
-    private LocalDate dataCadastro;
-
+    private String descricao;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+    @Column
+    private BigDecimal valor;
 }
