@@ -1,9 +1,6 @@
 package io.github.paduaalves.clientes.model.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -17,6 +14,7 @@ public class Cliente {
     private String nome;
     @Column(nullable = false, length = 11)
     private String cpf;
-    private LocalDate datacCadastro;
+    @Column
+    private LocalDate dataCadastro;
 
 }
