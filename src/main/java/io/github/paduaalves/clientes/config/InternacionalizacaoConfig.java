@@ -24,7 +24,7 @@ public class InternacionalizacaoConfig {
     public LocalValidatorFactoryBean validatorFactoryBean(){
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
         bean.setValidationMessageSource(messageSource());
-        return bean;gst
+        return bean;
     }
 
 }
